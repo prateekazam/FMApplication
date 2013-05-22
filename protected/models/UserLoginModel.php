@@ -16,7 +16,6 @@
  * @property string $DOB
  * @property string $USER_NAME
  * @property string $PASSWORD
- * @property string $CREATED_BY
  * @property string $CREATED_DATE
  * @property integer $USER_TYPE_ID
  */
@@ -54,13 +53,13 @@ class UserLoginModel extends CActiveRecord {
             array('TITLE, FIRST_NAME, MIDDLE_NAME, EMAIL_ID', 'length', 'max' => 45),
             array('LAST_NAME, USER_NAME, PASSWORD', 'length', 'max' => 200),
             //array('GENDER', 'compare', 'compareAttribute'=>'selectOption','message' => "Please Select Gender"),
-            array('CREATED_BY, CREATED_DATE', 'length', 'max' => 100),
+            array('CREATED_DATE', 'length', 'max' => 100),
             array('EMAIL_ID', 'email', 'message' => 'The email isn´t correct'),
             array('USER_NAME', 'unique', 'className' => 'UserLoginModel', 'attributeName' => 'USER_NAME', 'message' => "Username already exists"),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             //array('CREATED_DATE', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
-            array('USER_ID, TITLE, FIRST_NAME, MIDDLE_NAME, LAST_NAME, PHONE_NUMBER, MOBILE_NUMBER, GENDER, EMAIL_ID, DOB, USER_NAME, PASSWORD, CREATED_BY, CREATED_DATE, USER_TYPE_ID', 'safe', 'on' => 'search'),
+            array('USER_ID, TITLE, FIRST_NAME, MIDDLE_NAME, LAST_NAME, PHONE_NUMBER, MOBILE_NUMBER, GENDER, EMAIL_ID, DOB, USER_NAME, PASSWORD,CREATED_DATE, USER_TYPE_ID', 'safe', 'on' => 'search'),
         );
     }
 
@@ -131,7 +130,6 @@ class UserLoginModel extends CActiveRecord {
 
     public function beforeSave() {
         if ($this->isNewRecord) {
-            $this->CREATED_BY = 'Prateek';
             $this->CREATED_DATE = 'prateekshaw';
             $this->PASSWORD=$this->hash($this->PASSWORD);
         }
