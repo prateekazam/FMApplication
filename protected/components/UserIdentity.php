@@ -31,7 +31,7 @@ class UserIdentity extends CUserIdentity {
         $user = UserLoginModel::model()->findByAttributes(array('USER_NAME' => $this->username));
         if ($user == null) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
-        } elseif ($this->checkPassword($user->PASSWORD)) {
+        } else if ($user->PASSWORD !== crypt($this->password, $user->PASSWORD)) {
             $this->errorCode = self::ERROR_PASSWORD_INVALID;
         }
         else
@@ -40,8 +40,8 @@ class UserIdentity extends CUserIdentity {
     }
 
     public function checkPassword($password) {
-        $new_hash = crypt($password);
-        if ($new_hash == $this->password) {
+        $new_hash = crypt($this->password, $password);
+        if ($new_hash != $password) {
             return true;
         } else {
             return false;
