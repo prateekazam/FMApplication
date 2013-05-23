@@ -1,0 +1,126 @@
+/* 
+    Document   : wallposts
+    Created on : May 7, 2013, 4:02:52 PM
+    Author     : rsnanda
+    Description:
+        Purpose of the stylesheet follows.
+*/
+ 
+ @media screen and (min-width: 720px) {
+ .wpleft-container{
+        padding: 1%;
+        text-wrap: none;
+        margin-left: 0%;
+        margin-top: 0%;
+        max-width: 15%;
+        width: 15%;
+        min-height: 18.75em;
+        margin-right: 0%;
+        margin-bottom: 0%; 
+        float: left;
+        -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+    .wpcenter-container{
+        padding: 1%;
+        clear: both;
+        border-left: 1px solid #E5E5E5;
+        position: absolute;
+        min-height: 18.75em;
+        margin-left: 15%;
+        max-width:70%;
+        width: 70%;
+        margin-top:0%;
+        margin-bottom:0%;
+        -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+    .wpright-container{
+        float: right;
+        border-left: 1px solid #E5E5E5;
+        padding: 1%;
+        max-width: 15%;
+        width: 15%;
+        min-height: 18.75em;
+        margin-top:0%;
+        margin-bottom: 0%;
+        margin-right: 0%;
+        -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    }
+ }
+     .headermain{
+    background: none repeat scroll 0 0 #F1F1F1;
+    border-bottom: 1px solid #E5E5E5;
+    height: 4.00em;
+    margin-bottom: 0%;
+    margin-top: 0px;
+    overflow: hidden;
+    padding:0 1em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    @media screen and (max-width:720px) and (min-width: 480px) {
+         .wpleft-container {
+   float: none;
+   margin: 5% 0%;
+   width:100%;
+   min-width: 100%;
+   -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+        .wpcenter-container{
+      border-top: 1px;
+      float: none;
+      padding:3%;
+      border-top: 1px solid #E5E5E5;
+      width:100%;
+      min-width: 100%;
+      margin-left:0px;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .wpright-container{
+   border-top: 1px solid #E5E5E5;
+   width: 100%;
+   margin: 5% 0%;
+   padding:2%;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+      
+  }
+    }
+    @media screen and (max-width: 480px) {
+  .wpleft-container {
+   float: none;
+   border-right:0px;
+   margin: 5% 0%;
+   width:100%;
+   min-width: 100%;
+   -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+   .wpcenter-container{
+      border-top: 1px;
+      float: none;
+      padding:3%;
+      border-top: 1px solid #E5E5E5;
+      width:100%;
+      min-width: 100%;
+      margin-left:0px;
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .wpright-container{
+     display: none;
+      
+  }
+ }

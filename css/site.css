@@ -1,0 +1,123 @@
+/* 
+    Document   : site
+    Created on : May 7, 2013, 12:49:42 PM
+    Author     : rsnanda
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.sitefooter{
+    border: 1px solid #E5E5E5;
+    clear: both;
+    background-origin: border-box;
+    line-height: 1;
+    padding:0%;
+    
+}
+   .header{
+    background: none repeat scroll 0 0 #F1F1F1;
+    border-bottom: 1px solid #E5E5E5;
+    height: 4.375em;
+    margin-bottom: 2em;
+    margin-top: 0px;
+    overflow: hidden;
+    padding:0 1em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .heading_em{
+        text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+   .btn-signup {
+  padding: 1em 1em;
+  font-size: 1em;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+    .form-signin {
+        max-width: 100%;
+        padding: 1.18em 1.8125em 1.8125em;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: .625em;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 1em;
+        height: auto;
+        margin-bottom: .9375em;
+        padding: .4375em .5625em;
+      }
+      
+      @media screen and (min-width: 720px) {
+          
+.carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+      
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      background: transparent;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .left-container{
+        margin-left: 0%;
+        margin-top: 0%;
+        max-width: 50%; 
+        margin-right: 0%;
+        margin-bottom: 20%; 
+        float: left;
+    }
+    .signup{
+        float: right;
+        width: 30%
+    }
+    }
+  @media screen and (max-width: 480px) {
+  .left-container {
+    display: none;
+  }
+  .carousel {
+      display: none;
+  }
+  .signup{
+      width: 100%;
+      float:none;
+      clear:both;
+      
+  }
+  
+}
+@media screen and (min-width:420px) and (max-width: 720px) {
+  .left-container {
+    
+  }
+  .carousel{
+      display: none;
+  }
+  .signup{
+      width: 100%;
+      float:none;
+      clear:both;
+      
+  }
+}
