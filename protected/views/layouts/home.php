@@ -61,11 +61,11 @@
                     <a class='right carousel-control' href="#myCarousel" data-slide="next">&rsaquo;</a>
                 </div> 
             </div>
-            <div class="container" id="page">
+            
                 <div class="signup">
                     <?php echo $content; ?>
                 </div>
-            </div>
+            
 
 
             <footer class='sitefooter'>
