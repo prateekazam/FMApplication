@@ -1,7 +1,8 @@
 <?php
 
 class SiteController extends Controller {
-      public $layout = 'postPage';
+
+    public $layout = 'postPage';
 
     /**
      * Declares class-based actions.
@@ -82,14 +83,13 @@ class SiteController extends Controller {
 
         // collect user input data
         if (isset($_POST['LoginForm'])) {
-            //$this->layout = 'postPage';
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())
                 $this->redirect(array('pages/about.php'));
         }
         // display the login form
-        $this->render('index', array('model' => $model));
+        $this->render('login', array('model' => $model));
         //  $this->render('login', array('model' => $model));
     }
 
