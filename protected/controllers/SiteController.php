@@ -1,7 +1,7 @@
 <?php
 
 class SiteController extends Controller {
-    //  public $layout = 'newlayout';
+      public $layout = 'postPage';
 
     /**
      * Declares class-based actions.
@@ -28,7 +28,9 @@ class SiteController extends Controller {
     public function actionIndex() {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-        $this->render('index');
+        $this->layout = 'home';
+        //  $model = new LoginForm;
+        $this->actionLogin();
     }
 
     /**
@@ -80,13 +82,15 @@ class SiteController extends Controller {
 
         // collect user input data
         if (isset($_POST['LoginForm'])) {
+            //$this->layout = 'postPage';
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())
-                $this->redirect(Yii::app()->user->returnUrl);
+                $this->redirect(array('pages/about.php'));
         }
         // display the login form
-        $this->render('login', array('model' => $model));
+        $this->render('index', array('model' => $model));
+        //  $this->render('login', array('model' => $model));
     }
 
     /**
