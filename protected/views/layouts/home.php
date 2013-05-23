@@ -63,6 +63,13 @@
             </div>
             
                 <div class="signup">
+                   <?php $this->widget('bootstrap.widgets.TbAlert',array(
+        'block'=>true,
+        'fade'=>true,
+        'closeText'=>'&times;',
+        'alerts'=>array( 
+            'error'=>array('block'=>true, 'fade'=>true), 
+        ))); ?>
                     <?php echo $content; ?>
                 </div>
             

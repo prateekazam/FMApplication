@@ -9,6 +9,7 @@
 		'validateOnSubmit'=>true
 	),
 )); ?>
+
 <h2 class="form-signin-heading">Sign In !</h2>
 	<?php echo $form->textFieldRow($model,'username',array('class'=>'input-block-level','placeholder'=>'username')); ?>
 
