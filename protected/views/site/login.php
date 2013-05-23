@@ -1,29 +1,28 @@
-<div class="form">
+
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'login-form',
-    'type'=>'horizontal',
+    
+    'htmlOptions'=>array('class'=>'form-signin'),
 	'enableClientValidation'=>true,
 	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
+		'validateOnSubmit'=>true
 	),
 )); ?>
-	<?php echo $form->textFieldRow($model,'username'); ?>
+<h2 class="form-signin-heading">Sign In !</h2>
+	<?php echo $form->textFieldRow($model,'username',array('class'=>'input-block-level','placeholder'=>'username')); ?>
 
-	<?php echo $form->passwordFieldRow($model,'password',array(
-     
-    )); ?>
+	<?php echo $form->passwordFieldRow($model,'password',array('class'=>'input-block-level','placeholder'=>'password')); ?>
 
 	<?php echo $form->checkBoxRow($model,'rememberMe'); ?>
-
-	<div class="form-actions">
-		<?php $this->widget('bootstrap.widgets.TbButton', array(
+	<?php $this->widget('bootstrap.widgets.TbButton', array(
             'buttonType'=>'submit',
             'type'=>'primary',
             'label'=>'Login',
+            'htmlOptions'=>array('class'=>'btn btn-large btn-primary')
         )); ?>
-	</div>
+	
 
 <?php $this->endWidget(); ?>
 
-</div><!-- form -->
+<!-- form -->
