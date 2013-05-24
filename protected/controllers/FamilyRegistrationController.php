@@ -6,7 +6,7 @@ class FamilyRegistrationController extends Controller {
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/column2';
+    public $layout = '//layouts/postPage';
 
     /**
      * @return array action filters
@@ -65,16 +65,15 @@ class FamilyRegistrationController extends Controller {
 
         if (isset($_POST['FamilyRegistration'])) {
             $model->attributes = $_POST['FamilyRegistration'];
-
             if ($model->save()) {
-                $model1 = new FamilyRelationMap();
-                $model1->USER_ID = 1;
-                $model1->USER_LEVEL_ID = 0;
-                $model1->FAMILY_REL_ID = $model->registrationId;
-                $model1->FAMILY_ID =$model->FAMILY_ID;
-                $model1->CREATED_BY = new CDbExpression('NOW()');
-                $model1->CREATED_DATE = new CDbExpression('NOW()');
-                $model1->save();
+//                $model1 = new FamilyRelationMap();
+//                $model1->USER_ID = 1;
+//                $model1->USER_LEVEL_ID = 0;
+//                $model1->FAMILY_REL_ID = $model->registrationId;
+//                $model1->FAMILY_ID = $model->FAMILY_ID;
+//                $model1->CREATED_BY = new CDbExpression('NOW()');
+//                $model1->CREATED_DATE = new CDbExpression('NOW()');
+//                $model1->save();
                 $this->redirect(array('view', 'id' => $model->FAMILY_ID));
             }
         }
