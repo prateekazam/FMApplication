@@ -7,12 +7,14 @@
 */
 
 .sitefooter{
-    border: 1px solid #E5E5E5;
     clear: both;
     background-origin: border-box;
     line-height: 1;
     padding:0%;
     
+}
+.footer-divider{
+    margin: 1em 0;
 }
 .error{
     color: #b94a48;

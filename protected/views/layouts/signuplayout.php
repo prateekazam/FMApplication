@@ -60,7 +60,9 @@ and open the template in the editor.
                 
                  <?php echo $content; ?>
             </div>
+        
             <div class="sitefooter">
+                <hr class="footer-divider"/>
                 <ul class="inline  pull-right">
                     <li>
                         <a href='policies.html' class="pull-right" >Policies</a>

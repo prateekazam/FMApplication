@@ -88,6 +88,7 @@
 
 
             <footer class='sitefooter'>
+                <hr class="footer-divider"/>
                 <ul class="inline  pull-right">
                     <li>
                         <a href='policies.html' class="pull-right" >Policies</a>
