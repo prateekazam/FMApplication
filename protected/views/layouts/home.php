@@ -16,7 +16,7 @@
             $this->widget('bootstrap.widgets.TbButton', array(
                 'buttonType' => 'link',
                 'type' => 'primary',
-                'label' => 'Login',
+                'label' => 'SignUp',
                 'url' => 'index.php?r=userLoginModel/create',
                 'htmlOptions' => array('class' => 'pull-right btn btn-large btn-danger')
             ));
