@@ -12,7 +12,17 @@
     <body style="background-color:white">
         <div class="header">
             <h1  class="pull-left"> Connect! </h1> 
-            <a class="pull-right btn btn-large btn-danger" >Sign Up !</a>
+            <?php
+            $this->widget('bootstrap.widgets.TbButton', array(
+                'buttonType' => 'link',
+                'type' => 'primary',
+                'label' => 'Login',
+                'url' => 'index.php?r=userLoginModel/create',
+                'htmlOptions' => array('class' => 'pull-right btn btn-large btn-danger')
+            ));
+            ?>
+
+
         </div>
         <div class="container-fluid" >
             <div id="layout" class="left-container">
@@ -61,18 +71,20 @@
                     <a class='right carousel-control' href="#mycarousel" data-slide="next">&rsaquo;</a>
                 </div> 
             </div>
-            
-                <div class="signup">
-                   <?php $this->widget('bootstrap.widgets.TbAlert',array(
-        'block'=>true,
-        'fade'=>true,
-        'closeText'=>'&times;',
-        'alerts'=>array( 
-            'error'=>array('block'=>true, 'fade'=>true), 
-        ))); ?>
-                    <?php echo $content; ?>
-                </div>
-            
+
+            <div class="signup">
+                <?php
+                $this->widget('bootstrap.widgets.TbAlert', array(
+                    'block' => true,
+                    'fade' => true,
+                    'closeText' => '&times;',
+                    'alerts' => array(
+                        'error' => array('block' => true, 'fade' => true),
+                )));
+                ?>
+                <?php echo $content; ?>
+            </div>
+
 
 
             <footer class='sitefooter'>

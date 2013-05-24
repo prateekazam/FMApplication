@@ -6,7 +6,7 @@ class UserLoginModelController extends Controller {
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
      */
-    public $layout = '//layouts/column2';
+    public $layout = '//layouts/signuplayout';
 
     /**
      * @return array action filters
@@ -78,7 +78,7 @@ class UserLoginModelController extends Controller {
             $model->attributes = $_POST['UserLoginModel'];
             if ($model->save()) {
                 Yii::app()->user->setState("userId", $model->USER_ID);
-                $this->redirect(array('view', 'id' => $model->USER_ID));
+                $this->redirect(array('pages/about.php'));
             }
         }
 

@@ -25,7 +25,7 @@ class FamilyRegistration extends CActiveRecord {
      * @return FamilyRegistration the static model class
      */
     public $registrationId;
-    
+
     public static function model($className = __CLASS__) {
         return parent::model($className);
     }
@@ -44,10 +44,10 @@ class FamilyRegistration extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('FAMILY_NAME, DOR, FAMILY_EMAIL_ID, FAMILY_PHONE_NUMBER, FAMILY_DESC', 'required'),
+            array('FAMILY_NAME,FAMILY_EMAIL_ID, FAMILY_PHONE_NUMBER, FAMILY_DESC', 'required'),
             //array('USER_ID', 'numerical', 'integerOnly' => true),
             array('FAMILY_NAME, FAMILY_EMAIL_ID, FAMILY_PHONE_NUMBER, FAMILY_DESC, CREATED_BY', 'length', 'max' => 200),
-            array('CREATED_DATE,registrationId', 'safe'),
+            array('CREATED_DATE,registrationId,DOR', 'safe'),
                 // The following rule is used by search().
                 // Please remove those attributes that should not be searched.
                 //array('FAMILY_ID, FAMILY_NAME, DOR, FAMILY_EMAIL_ID, FAMILY_PHONE_NUMBER, FAMILY_DESC, CREATED_BY, CREATED_DATE, USER_ID', 'safe', 'on' => 'search'),
@@ -79,6 +79,7 @@ class FamilyRegistration extends CActiveRecord {
             'CREATED_BY' => 'Created By',
             'CREATED_DATE' => 'Created Date',
             'USER_ID' => 'User',
+            'registrationId' => 'Relationship with family'
         );
     }
 
@@ -108,15 +109,16 @@ class FamilyRegistration extends CActiveRecord {
     }
 
     public function beforeSave() {
-        $this->USER_ID = Yii::app()->user->hasState("userId");
+        $this->USER_ID = 1;
         $this->CREATED_BY = new CDbExpression('NOW()');
         $this->CREATED_DATE = new CDbExpression('NOW()');
-        if ($this->isNewRecord) {
-
-            // $this->CREATED_DATE = 'prateekshaw';
-        }
-        else
-            $this->modified = new CDbExpression('NOW()');
+        $this->DOR = new CDbExpression('NOW()');
+//        if ($this->isNewRecord) {
+//
+//            // $this->CREATED_DATE = 'prateekshaw';
+//        }
+//        else
+//            $this->modified = new CDbExpression('NOW()');
 
         return parent::beforeSave();
     }
