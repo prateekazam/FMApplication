@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <script src="http://code.jquery.com/jquery.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.js"></script>
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/site.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -40,9 +40,9 @@
                 </div>
                 <br/><br/>
 
-                <div class="carousel">
+                <div id="mycarousel" class="carousel">
                     <div class="carousel-inner">
-                        <div class="item active">
+                        <div  class="item active">
                             <img  src="images/tulips.jpeg" alt="Tulips" />
                             <div class="carousel-caption">
                                 <h1>Capture Family Moments !</h1>
@@ -57,8 +57,8 @@
                             </div>
                         </div>
                     </div>
-                    <a class='left carousel-control' href='#siteCarousel' data-slide="prev">&lsaquo;</a>
-                    <a class='right carousel-control' href="#myCarousel" data-slide="next">&rsaquo;</a>
+                    <a class='left carousel-control' href='#mycarousel' data-slide="prev">&lsaquo;</a>
+                    <a class='right carousel-control' href="#mycarousel" data-slide="next">&rsaquo;</a>
                 </div> 
             </div>
             
