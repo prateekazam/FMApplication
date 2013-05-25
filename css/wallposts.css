@@ -74,11 +74,16 @@
     margin:0px;
   
 }
-
+.center-wrapper{
+    width:60%;
+    margin:0 auto;
+    text-align: center;
+    
+}
    
  .wpleft-container{
-        padding-right:2%;
-        padding-left:2%;
+        padding-right:1%;
+        padding-left:1%;
         padding-top:2%;
         float: left;
         position:relative;
@@ -131,6 +136,12 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
+  .center-wrapper{
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+    
+}
         .wpcenter-container{
       border-top: 1px;
       float: none;
@@ -166,7 +177,12 @@
        -moz-box-sizing: border-box;
             box-sizing: border-box;
   }
-  
+  .center-wrapper{
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+    
+}
    .wpcenter-container{
       border-top: 1px;
       float: none;
