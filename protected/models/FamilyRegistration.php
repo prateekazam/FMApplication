@@ -47,6 +47,7 @@ class FamilyRegistration extends CActiveRecord {
             array('FAMILY_NAME,FAMILY_EMAIL_ID, FAMILY_PHONE_NUMBER, FAMILY_DESC', 'required'),
             //array('USER_ID', 'numerical', 'integerOnly' => true),
             array('FAMILY_NAME, FAMILY_EMAIL_ID, FAMILY_PHONE_NUMBER, FAMILY_DESC, CREATED_BY', 'length', 'max' => 200),
+            array('FAMILY_EMAIL_ID', 'unique', 'className' => 'FamilyRegistration', 'attributeName' => 'FAMILY_EMAIL_ID', 'message' => "Email is already exists"),
             array('CREATED_DATE,registrationId,DOR', 'safe'),
                 // The following rule is used by search().
                 // Please remove those attributes that should not be searched.
@@ -109,7 +110,7 @@ class FamilyRegistration extends CActiveRecord {
     }
 
     public function beforeSave() {
-        $this->USER_ID = Yii::app()->user->getState("userId");;
+        $this->USER_ID = Yii::app()->user->getState("userId");
         $this->CREATED_BY = new CDbExpression('NOW()');
         $this->CREATED_DATE = new CDbExpression('NOW()');
         $this->DOR = new CDbExpression('NOW()');
