@@ -73,6 +73,7 @@ class SiteController extends Controller {
      * Displays the login page
      */
     public function actionLogin() {
+
         $model = new LoginForm;
 
         // if it is ajax validation request
@@ -83,16 +84,21 @@ class SiteController extends Controller {
 
         // collect user input data
         if (isset($_POST['LoginForm'])) {
+
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
-            if ($model->validate() && $model->login())
+            if ($model->validate() && $model->login()) {
                 $this->redirect(array('home'));
+            }
         }
         // display the login form
         $this->render('login', array('model' => $model));
         //  $this->render('login', array('model' => $model));
     }
-
+     public function actionHome() {
+         
+       $this->render('index');
+     }
     /**
      * Logs out the current user and redirect to homepage.
      */
