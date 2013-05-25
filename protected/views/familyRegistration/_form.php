@@ -18,7 +18,7 @@
     <?php echo $form->textFieldRow($model, 'FAMILY_NAME', array('size' => 60, 'maxlength' => 200)); ?>
     <?php echo $form->textFieldRow($model, 'FAMILY_EMAIL_ID', array('size' => 60, 'maxlength' => 200)); ?>
     <?php echo $form->textFieldRow($model, 'FAMILY_PHONE_NUMBER', array('size' => 60, 'maxlength' => 200)); ?>
-    <?php echo $form->dropdownListRow($model, 'registrationId', CHtml::listData(RelationMaster::model()->findAll(), 'FAMILY_REL_ID', 'FAMILY_REL_MST')); ?>
+    <?php echo $form->dropdownListRow($model, 'registrationId', CHtml::listData(RelationMaster::model()->findAll(), 'FAMILY_REL_ID', 'FAMILY_REL_NAME')); ?>
     <?php echo $form->textAreaRow($model, 'FAMILY_DESC', array('size' => 60, 'maxlength' => 200)); ?>
 
     <div clas="vertical-spacer"></div>
