@@ -36,7 +36,6 @@ and open the template in the editor.
                         'items' => array(
                             array('label' => 'Family Registration', 'icon' => 'home', 'url' => 'index.php?r=familyRegistration/create', 'active' => true),
                             array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
-                            array('label' => 'ANOTHER LIST HEADER'),
                             array('label' => 'Profile', 'icon' => 'user', 'url' => '#'),
                             array('label' => 'Settings', 'icon' => 'cog', 'url' => '#'),
                             array('label' => 'Help', 'icon' => 'flag', 'url' => '#'),
