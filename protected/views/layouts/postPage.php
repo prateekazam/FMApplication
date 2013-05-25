@@ -27,10 +27,10 @@ and open the template in the editor.
             ));
             ?>
         </div>
-        <div class="container-fluid">
+        <div class="mycontainer">
+            <div class="wpcenter-container"><?php echo $content; ?></div> 
             <div class="wpleft-container">
-
-                <ul class="nav nav-tabs nav-stacked">
+            <ul class="nav nav-tabs nav-stacked">
                     <?php
                     $this->widget('bootstrap.widgets.TbMenu', array(
                         'type' => 'list',
@@ -45,12 +45,11 @@ and open the template in the editor.
                     ));
                     ?>
             </div>
-
-            <div class="wpcenter-container"><p><?php echo $content; ?></p></div>
+           
             <div class="wpright-container"><p>adasd</p></div>
-
-
+        </div>
             <div class="sitefooter">
+                <hr class="footer-divider"/>
                 <ul class="inline  pull-right">
                     <li>
                         <a href='policies.html' class="pull-right" >Policies</a>
@@ -63,7 +62,7 @@ and open the template in the editor.
                     </li>
                 </ul>
             </div>   
-        </div>
+        
     </body>
 
 </html>
