@@ -109,7 +109,7 @@ class FamilyRegistration extends CActiveRecord {
     }
 
     public function beforeSave() {
-        $this->USER_ID = 1;
+        $this->USER_ID = Yii::app()->user->getState("userId");;
         $this->CREATED_BY = new CDbExpression('NOW()');
         $this->CREATED_DATE = new CDbExpression('NOW()');
         $this->DOR = new CDbExpression('NOW()');
