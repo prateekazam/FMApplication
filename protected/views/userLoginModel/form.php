@@ -56,20 +56,18 @@
         ));
         ?>
     </label>-->
-    <div class="inline">
+    <div class="inline center-wrapper">
     <?php
     $this->widget('bootstrap.widgets.TbButton', array(
         'buttonType' => 'submit',
         'type' => 'primary',
         'label' => 'Save',
-        'htmlOptions' => array('class'=>'btn-bar')
     )); ?>
-        
+        <div class="horizontalspacersmall"></div>
         <?php
     $this->widget('bootstrap.widgets.TbButton', array(
         'buttonType' => 'reset',
         'label' => 'Reset',
-        'htmlOptions' => array('class'=>'btn-bar')
     ));
     ?>
         </div>

@@ -57,8 +57,8 @@ and open the template in the editor.
             
         </div>
             <div class="signup">
-                
                  <?php echo $content; ?>
+                    </div>
             </div>
         
             <div class="sitefooter">

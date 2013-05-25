@@ -13,6 +13,12 @@
     padding:0%;
     
 }
+.center-wrapper{
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+    
+}
 .footer-divider{
     margin: 1em 0;
 }
@@ -47,7 +53,11 @@
 .feature-divider {
       margin: 5em 0; /* Space out the Bootstrap <hr> more */
     }
-   
+   .horizontalspacersmall{
+       width: 5%;
+       height: auto;
+       display: inline-block;
+    }
     
  .btn-bar {
   padding: .75em .75em;
