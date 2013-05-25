@@ -55,7 +55,8 @@ class UserLoginModel extends CActiveRecord {
             //array('GENDER', 'compare', 'compareAttribute'=>'selectOption','message' => "Please Select Gender"),
             array('CREATED_DATE', 'length', 'max' => 100),
             array('EMAIL_ID', 'email', 'message' => 'The email isn´t correct'),
-            array('USER_NAME', 'unique', 'className' => 'UserLoginModel', 'attributeName' => 'USER_NAME', 'message' => "Username already exists"),
+            array('USER_NAME', 'unique', 'className' => 'UserLoginModel', 'attributeName' => 'USER_NAME', 'message' => "Username is already exists"),
+            array('EMAIL_ID', 'unique', 'className' => 'UserLoginModel', 'attributeName' => 'EMAIL_ID', 'message' => "Email is already exists"),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             //array('CREATED_DATE', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
