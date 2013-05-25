@@ -26,11 +26,11 @@ class FamilyRegistrationController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('index', 'view','create'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update'),
+                'actions' => array('update'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -66,14 +66,14 @@ class FamilyRegistrationController extends Controller {
         if (isset($_POST['FamilyRegistration'])) {
             $model->attributes = $_POST['FamilyRegistration'];
             if ($model->save()) {
-//                $model1 = new FamilyRelationMap();
-//                $model1->USER_ID = 1;
-//                $model1->USER_LEVEL_ID = 0;
-//                $model1->FAMILY_REL_ID = $model->registrationId;
-//                $model1->FAMILY_ID = $model->FAMILY_ID;
-//                $model1->CREATED_BY = new CDbExpression('NOW()');
-//                $model1->CREATED_DATE = new CDbExpression('NOW()');
-//                $model1->save();
+                $familyRelationMapModel = new FamilyRelationMap();
+                $familyRelationMapModel->USER_ID = Yii::app()->user->getState("userId");
+                $familyRelationMapModel->USER_LEVEL_ID = 0;
+                $familyRelationMapModel->FAMILY_REL_ID = $model->registrationId;
+                $familyRelationMapModel->FAMILY_ID = $model->FAMILY_ID;
+                $familyRelationMapModel->CREATED_BY = new CDbExpression('NOW()');
+                $familyRelationMapModel->CREATED_DATE = new CDbExpression('NOW()');
+                $familyRelationMapModel->save();
                 $this->redirect(array('view', 'id' => $model->FAMILY_ID));
             }
         }
