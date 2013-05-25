@@ -11,7 +11,6 @@ and open the template in the editor.
         <link href="css/bootstrap.css" rel="stylesheet">
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
         <link href="css/wallposts.css" rel="stylesheet">
-        <link href="css/site.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body style="background-color:white ">
@@ -46,7 +45,7 @@ and open the template in the editor.
                     ?>
             </div>
            
-            <div class="wpright-container"><p>adasd</p></div>
+            <div class="wpright-container">adasdasdasdas dasdasdasdasdasdasd</div>
         </div>
             <div class="sitefooter">
                 <hr class="footer-divider"/>

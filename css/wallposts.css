@@ -11,10 +11,19 @@
     text-align: center;
     
 }
+.sitefooter{
+    clear: both;
+    background-origin: border-box;
+    line-height: 1;
+    padding:0%;
+    
+}
+.error{
+    color: #b94a48;
+}
  .verticalspacer{
         width:100%;
         height: 2em;
-        content: ";";
     }
     .horizontalspacersmall{
        width: 5%;
@@ -78,8 +87,7 @@
     width:60%;
     margin:0 auto;
     text-align: center;
-    
-}
+    }
    
  .wpleft-container{
         padding-right:1%;
@@ -100,6 +108,7 @@
     .wpcenter-container{
         float: left;
         position: relative;
+        text-wrap: normal;
         padding: 2% 5%;
         margin: 0%;
         max-width:100%;
@@ -113,9 +122,11 @@
     }
     .wpright-container{
         float: left;
+        overflow: wrap;
         position: relative;
+        border: 0px;
         padding: 2%;
-        padding-left: 5%;
+        padding-left: 2%;
         padding-right: 2%;
         max-width: 200px;
         min-width: 200px;
