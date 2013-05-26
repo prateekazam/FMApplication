@@ -22,6 +22,15 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 <?php echo $form->textFieldRow($model, 'PHONE_NUMBER', array('class' => 'input-block-level')); ?>
 
 <?php echo $form->textFieldRow($model, 'MOBILE_NUMBER', array('class' => 'input-block-level')); ?>
+<!-- <?php
+//$this->widget('ext.editable.EditableField', array(
+//    'type' => 'text',
+//    'model' => $model,
+//    'attribute' => 'PHONE_NUMBER',
+//    'url' => $this->createUrl('site/editable'), //url for submit data
+//));
+//
+?>  -->
 
 <?php echo $form->error($model, 'DOB'); ?>
 <div class="inline center-wrapper">
