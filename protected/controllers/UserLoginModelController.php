@@ -48,6 +48,7 @@ class UserLoginModelController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $this->layout = '//layouts/postPage';
         $this->render('view', array(
             'model' => $this->loadModel($id),
         ));
@@ -93,15 +94,16 @@ class UserLoginModelController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
+        $this->layout = '//layouts/postPage';
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['UserLoginModel'])) {
             $model->attributes = $_POST['UserLoginModel'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->USER_ID));
+                $this->redirect(array('indexgfhgf'));
         }
 
         $this->render('update', array(
