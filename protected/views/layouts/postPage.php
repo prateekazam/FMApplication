@@ -16,7 +16,7 @@ and open the template in the editor.
     <body style="background-color:white ">
         <div class="headermain">
             <h1  class="pull-left"> Connect! </h1> 
-             <?php
+            <?php
             $this->widget('bootstrap.widgets.TbButton', array(
                 'buttonType' => 'link',
                 'type' => 'primary',
@@ -27,40 +27,42 @@ and open the template in the editor.
             ?>
         </div>
         <div class="mycontainer">
-            <div class="wpcenter-container"><?php echo $content; ?></div> 
+            <div class="wpcenter-container">
+
+                <?php echo $content; ?></div> 
             <div class="wpleft-container">
-            <ul class="nav nav-tabs nav-stacked">
+                <ul class="nav nav-tabs nav-stacked">
                     <?php
                     $this->widget('bootstrap.widgets.TbMenu', array(
                         'type' => 'list',
                         'items' => array(
-                            array('label' => 'Family Registration', 'icon' => 'home', 'url' => 'index.php?r=familyRegistration/create', 'active' => true),
+                            array('label' => 'Family Registration', 'icon' => 'home', 'url' => 'index.php?r=familyRegistration/create', 'visible' => !Yii::app()->user->hasState("familyId")),
                             array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
-                            array('label' => 'Profile', 'icon' => 'user', 'url'=>array('userLoginModel/update', 'id'=>Yii::app()->user->getState("userId")), 'active' => true),
+                            array('label' => 'Profile', 'icon' => 'user', 'url' => array('userLoginModel/update')),
                             array('label' => 'Settings', 'icon' => 'cog', 'url' => '#'),
                             array('label' => 'Help', 'icon' => 'flag', 'url' => '#'),
                         ),
                     ));
                     ?>
             </div>
-           
+
             <div class="wpright-container">adasdasdasdas dasdasdasdasdasdasd</div>
         </div>
-            <div class="sitefooter">
-                <hr class="footer-divider"/>
-                <ul class="inline  pull-right">
-                    <li>
-                        <a href='policies.html' class="pull-right" >Policies</a>
-                    </li>
-                    <li>
-                        <a href='policies.html' class="pull-right" >About Connect</a>
-                    </li>
-                    <li>
-                        <a href='policies.html' class="pull-right" >Help!</a>
-                    </li>
-                </ul>
-            </div>   
-        
+        <div class="sitefooter">
+            <hr class="footer-divider"/>
+            <ul class="inline  pull-right">
+                <li>
+                    <a href='policies.html' class="pull-right" >Policies</a>
+                </li>
+                <li>
+                    <a href='policies.html' class="pull-right" >About Connect</a>
+                </li>
+                <li>
+                    <a href='policies.html' class="pull-right" >Help!</a>
+                </li>
+            </ul>
+        </div>   
+
     </body>
 
 </html>
