@@ -47,8 +47,9 @@ class UserLoginModel extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('TITLE, FIRST_NAME, LAST_NAME, GENDER, EMAIL_ID, DOB, USER_NAME, PASSWORD,repeat_password', 'required'),
-            array('repeat_password', 'compare', 'compareAttribute' => 'PASSWORD', 'message' => "Passwords don't match"),
+            array('TITLE, FIRST_NAME, LAST_NAME, GENDER, EMAIL_ID, DOB, USER_NAME, PASSWORD', 'required'),
+            array('repeat_password', 'required', 'on' => 'insert'),
+            array('repeat_password', 'compare', 'compareAttribute' => 'PASSWORD', 'message' => "Passwords don't match", 'on' => 'insert'),
             array('PHONE_NUMBER, MOBILE_NUMBER,USER_TYPE_ID', 'numerical', 'integerOnly' => true),
             array('TITLE, FIRST_NAME, MIDDLE_NAME, EMAIL_ID', 'length', 'max' => 45),
             array('LAST_NAME, USER_NAME, PASSWORD', 'length', 'max' => 200),
@@ -56,7 +57,7 @@ class UserLoginModel extends CActiveRecord {
             array('CREATED_DATE', 'length', 'max' => 100),
             array('EMAIL_ID', 'email', 'message' => 'The email isn´t correct'),
             array('USER_NAME', 'unique', 'className' => 'UserLoginModel', 'attributeName' => 'USER_NAME', 'message' => "Username is already exists"),
-            array('EMAIL_ID', 'unique', 'className' => 'UserLoginModel', 'attributeName' => 'EMAIL_ID', 'message' => "Email is already exists"),
+            array('EMAIL_ID', 'unique', 'className' => 'UserLoginModel', 'attributeName' => 'EMAIL_ID', 'message' => "Email is already exists", 'on' => 'insert'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             //array('CREATED_DATE', 'default', 'value' => new CDbExpression('NOW()'), 'setOnEmpty' => false, 'on' => 'insert'),
@@ -132,10 +133,10 @@ class UserLoginModel extends CActiveRecord {
     public function beforeSave() {
         if ($this->isNewRecord) {
             $this->CREATED_DATE = 'prateekshaw';
-            $this->PASSWORD=$this->hash($this->PASSWORD);
+            $this->PASSWORD = $this->hash($this->PASSWORD);
         }
         else
-            $this->modified = new CDbExpression('NOW()');
+            $this->CREATED_DATE = new CDbExpression('NOW()');
 
         return parent::beforeSave();
     }
