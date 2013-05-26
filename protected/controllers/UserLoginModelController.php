@@ -93,8 +93,9 @@ class UserLoginModelController extends Controller {
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
-    public function actionUpdate($id) {
+    public function actionUpdate() {
         $this->layout = '//layouts/postPage';
+        $id=Yii::app()->user->getState("userId");
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
