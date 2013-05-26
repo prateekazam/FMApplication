@@ -16,66 +16,75 @@ and open the template in the editor.
     <body style="background-color:white ">
         <div class="header">
             <h1  class="pull-left"> Connect! </h1> 
+            <?php
+            $this->widget('bootstrap.widgets.TbButton', array(
+                'buttonType' => 'link',
+                'type' => 'primary',
+                'label' => 'Home',
+                'url' => 'index.php',
+                'htmlOptions' => array('class' => 'pull-right btn btn-large btn-danger')
+            ));
+            ?>
         </div>
         <div class="container-fluid">
             <div class="left-container"> 
                 <div class="row-fluid">
-                <div class="span6">
-                    <img class="img-polaroid" src="images/tulips.jpeg"/>
-                </div>
-                    <div class="span1"> </div>
-                <div class="span5">
-                    <p class="lead heading_em">Make Friends !</p>
-                        <p class="">Make new Friends We'll Give Suggestions!</p
-                </div>
+                    <div class="span6">
+                        <img class="img-polaroid" src="images/tulips.jpeg"/>
                     </div>
+                    <div class="span1"> </div>
+                    <div class="span5">
+                        <p class="lead heading_em">Make Friends !</p>
+                        <p class="">Make new Friends We'll Give Suggestions!</p
+                    </div>
+                </div>
             </div>
             <hr class="feature-divider"/>
             <div class="row-fluid">
-              
+
                 <div class="span5">
                     <p class="lead heading_em">Make Friends !</p>
-                        <p class="">Make new Friends We'll Give Suggestions!</p>
+                    <p class="">Make new Friends We'll Give Suggestions!</p>
                 </div>
                 <div class="span1"></div>
-                  <div class="span6">
+                <div class="span6">
                     <img class="img-polaroid" src="images/water.jpeg"/>
                 </div>
-                    </div>
-             <hr class="feature-divider"/>
-             <div class="row-fluid">
+            </div>
+            <hr class="feature-divider"/>
+            <div class="row-fluid">
                 <div class="span6">
                     <img class="img-polaroid" src="images/tulips.jpeg"/>
                 </div>
-                   <div class="span1"></div>
+                <div class="span1"></div>
                 <div class="span5">
                     <p class="lead heading_em">Make Friends !</p>
-                        <p class="">Make new Friends We'll Give Suggestions!</p
+                    <p class="">Make new Friends We'll Give Suggestions!</p
                 </div>
-                    </div>
             </div>
-            
         </div>
-            <div class="signup">
-                 <?php echo $content; ?>
-                    </div>
-            </div>
-        
-            <div class="sitefooter">
-                <hr class="footer-divider"/>
-                <ul class="inline  pull-right">
-                    <li>
-                        <a href='policies.html' class="pull-right" >Policies</a>
-                    </li>
-                    <li>
-                        <a href='policies.html' class="pull-right" >About Connect</a>
-                    </li>
-                    <li>
-                        <a href='policies.html' class="pull-right" >Help!</a>
-                    </li>
-                </ul>
-            </div>   
-        </div>
-    </body>
+
+    </div>
+    <div class="signup">
+        <?php echo $content; ?>
+    </div>
+</div>
+
+<div class="sitefooter">
+    <hr class="footer-divider"/>
+    <ul class="inline  pull-right">
+        <li>
+            <a href='policies.html' class="pull-right" >Policies</a>
+        </li>
+        <li>
+            <a href='policies.html' class="pull-right" >About Connect</a>
+        </li>
+        <li>
+            <a href='policies.html' class="pull-right" >Help!</a>
+        </li>
+    </ul>
+</div>   
+</div>
+</body>
 
 </html>
