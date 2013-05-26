@@ -29,14 +29,18 @@ class UserIdentity extends CUserIdentity {
 //			$this->errorCode=self::ERROR_NONE;
 //		return !$this->errorCode;
         $user = UserLoginModel::model()->findByAttributes(array('USER_NAME' => $this->username));
-        Yii::app()->user->setState("userId", $user->USER_ID);
         if ($user == null) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         } else if ($user->PASSWORD !== crypt($this->password, $user->PASSWORD)) {
             $this->errorCode = self::ERROR_PASSWORD_INVALID;
-        }
-        else
+        } else {
+            Yii::app()->user->setState("userId", $user->USER_ID);
+            $familyRegistration = FamilyRegistration::model()->findByAttributes(array('USER_ID' => $user->USER_ID));
+            if($familyRegistration!=null){
+                Yii::app()->user->setState("familyId", $familyRegistration->FAMILY_ID);
+            }
             $this->errorCode = self::ERROR_NONE;
+        }
         return !$this->errorCode;
     }
 
