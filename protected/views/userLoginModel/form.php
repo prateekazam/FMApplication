@@ -38,9 +38,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 <?php echo $form->textFieldRow($model, 'PHONE_NUMBER', array('class' => 'input-block-level')); ?>
 
 <?php echo $form->textFieldRow($model, 'MOBILE_NUMBER', array('class' => 'input-block-level')); ?>
-
-<?php echo $form->dropdownListRow($model, 'GENDER', array('Select' => 'Select', 0 => 'Male', 1 => "Female",), array('class' => 'input-block-level')); ?>
-
+<?php echo $form->radioButtonListInlineRow($model, 'GENDER', array('M' => 'Male', 'F' => 'Female')); ?>
 <?php echo $form->textFieldRow($model, 'EMAIL_ID', array('size' => 45, 'class' => 'input-block-level', 'maxlength' => 45)); ?>
 <?php echo $form->labelEx($model, 'DOB'); ?>
 <?php
