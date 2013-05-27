@@ -11,7 +11,7 @@
  * @property string $LAST_NAME
  * @property integer $PHONE_NUMBER
  * @property integer $MOBILE_NUMBER
- * @property integer $GENDER
+ * @property string $GENDER
  * @property string $EMAIL_ID
  * @property string $DOB
  * @property string $USER_NAME
