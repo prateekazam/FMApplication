@@ -1,17 +1,3 @@
--- raramuridesign.com
--- 2012-02-06
--- use this to import a list of countries into your database
-------------------------------------------------------------
-
-CREATE TABLE `countries` (
-`id` int(11) NOT NULL auto_increment,
-`country_code` varchar(2) NOT NULL default '',
-`country_name` varchar(100) NOT NULL default '',
-PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=240 ;
--- 
--- Dumping data for table `countries`
--- 
 INSERT INTO `countries` VALUES (1, 'US', 'United States');
 INSERT INTO `countries` VALUES (2, 'CA', 'Canada');
 INSERT INTO `countries` VALUES (3, 'AF', 'Afghanistan');
