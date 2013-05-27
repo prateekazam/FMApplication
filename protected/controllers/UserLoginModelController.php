@@ -95,7 +95,7 @@ class UserLoginModelController extends Controller {
      */
     public function actionUpdate() {
         $this->layout = '//layouts/postPage';
-        $id=Yii::app()->user->getState("userId");
+        $id = Yii::app()->user->getState("userId");
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
@@ -103,13 +103,19 @@ class UserLoginModelController extends Controller {
 
         if (isset($_POST['UserLoginModel'])) {
             $model->attributes = $_POST['UserLoginModel'];
-            if ($model->save())
-                $this->redirect(array('indexgfhgf'));
+            if ($model->save()) {
+                Yii::app()->user->setFlash('success', '<strong>Profile</strong>  Data has been Updated');
+                $this->navigateToHomePage();
+            }
         }
 
         $this->render('update', array(
             'model' => $model,
         ));
+    }
+
+    public function navigateToHomePage() {
+        $this->redirect(array('site/home'));
     }
 
     /**
