@@ -15,26 +15,16 @@ $this->menu=array(
 	array('label'=>'Manage UserLoginModel', 'url'=>array('admin')),
 );
 ?>
-
-<h1>View UserLoginModel #<?php echo $model->USER_ID; ?></h1>
-
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'USER_ID',
 		'TITLE',
 		'FIRST_NAME',
 		'MIDDLE_NAME',
 		'LAST_NAME',
 		'PHONE_NUMBER',
 		'MOBILE_NUMBER',
-		'GENDER',
 		'EMAIL_ID',
 		'DOB',
-		'USER_NAME',
-		'PASSWORD',
-		'CREATED_BY',
-		'CREATED_DATE',
-		'USER_TYPE_ID',
 	),
 )); ?>
