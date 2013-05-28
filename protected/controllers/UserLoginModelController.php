@@ -47,10 +47,10 @@ class UserLoginModelController extends Controller {
      * Displays a particular model.
      * @param integer $id the ID of the model to be displayed
      */
-    public function actionView($id) {
+    public function actionView() {
         $this->layout = '//layouts/postPage';
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model' => $this->loadModel(),
         ));
     }
 
@@ -95,8 +95,7 @@ class UserLoginModelController extends Controller {
      */
     public function actionUpdate() {
         $this->layout = '//layouts/postPage';
-        $id = Yii::app()->user->getState("userId");
-        $model = $this->loadModel($id);
+        $model = $this->loadModel();
 
         // Uncomment the following line if AJAX validation is needed
         $this->performAjaxValidation($model);
@@ -124,7 +123,7 @@ class UserLoginModelController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        $this->loadModel($id)->delete();
+        $this->loadModel()->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
@@ -152,7 +151,8 @@ class UserLoginModelController extends Controller {
      * @return UserLoginModel the loaded model
      * @throws CHttpException
      */
-    public function loadModel($id) {
+    public function loadModel() {
+        $id = Yii::app()->user->getState("userId");
         $model = UserLoginModel::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
