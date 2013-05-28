@@ -36,9 +36,10 @@ and open the template in the editor.
                     $this->widget('bootstrap.widgets.TbMenu', array(
                         'type' => 'list',
                         'items' => array(
-                            array('label' => 'Family Registration', 'icon' => 'home', 'url' => 'index.php?r=familyRegistration/create', 'visible' => !Yii::app()->user->hasState("familyId")),
+                            array('label' => 'Family Registration', 'icon' => 'user', 'url' => array('familyRegistration/create'),'visible' => !Yii::app()->user->hasState("familyId")),
+                            array('label' => 'Edit Profile', 'icon' => 'user', 'url' => array('userLoginModel/update')),
+                            array('label' => 'View Profile', 'icon' => 'user', 'url' => array('userLoginModel/view')),
                             array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
-                            array('label' => 'Profile', 'icon' => 'user', 'url' => array('userLoginModel/update')),
                             array('label' => 'Settings', 'icon' => 'cog', 'url' => '#'),
                             array('label' => 'Help', 'icon' => 'flag', 'url' => '#'),
                         ),
