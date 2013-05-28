@@ -66,6 +66,7 @@ class FamilyRegistrationController extends Controller {
         if (isset($_POST['FamilyRegistration'])) {
             $model->attributes = $_POST['FamilyRegistration'];
             if ($model->save()) {
+                Yii::app()->user->setState("familyId", $model->FAMILY_ID);
                 $familyRelationMapModel = new FamilyRelationMap();
                 $familyRelationMapModel->USER_ID = Yii::app()->user->getState("userId");
                 $familyRelationMapModel->USER_LEVEL_ID = 0;
