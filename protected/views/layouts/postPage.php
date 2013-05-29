@@ -40,7 +40,7 @@ and open the template in the editor.
                             array('label' => 'Edit Profile', 'icon' => 'user', 'url' => array('userLoginModel/update')),
                             array('label' => 'View Profile', 'icon' => 'user', 'url' => array('userLoginModel/view')),
                             array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
-                            array('label' => 'Settings', 'icon' => 'cog', 'url' => '#'),
+                            array('label' => 'Upload Photo', 'icon' => 'cog', 'url' => array('FmUserPhotos/create')),
                             array('label' => 'Help', 'icon' => 'flag', 'url' => '#'),
                         ),
                     ));
