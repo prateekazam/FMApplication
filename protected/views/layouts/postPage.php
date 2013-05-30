@@ -15,7 +15,17 @@ and open the template in the editor.
     </head>
     <body style="background-color:white ">
         <div class="headermain">
-            <h1  class="pull-left"> Connect! </h1> 
+            <h1  class="pull-left"> 
+            <?php
+            $this->widget('bootstrap.widgets.TbButton', array(
+                'buttonType' => 'link',
+                'type' => 'primary',
+                'label' => 'Home',
+                'url' => array('site/home'),
+                'htmlOptions' => array('class' => 'pull-right btn ')
+            ));
+            ?>
+                </h1> 
             <?php
             $this->widget('bootstrap.widgets.TbButton', array(
                 'buttonType' => 'link',
@@ -36,7 +46,7 @@ and open the template in the editor.
                     $this->widget('bootstrap.widgets.TbMenu', array(
                         'type' => 'list',
                         'items' => array(
-                            array('label' => 'Family Registration', 'icon' => 'user', 'url' => array('familyRegistration/create'),'visible' => !Yii::app()->user->hasState("familyId")),
+                            array('label' => 'Family Registration', 'icon' => 'user', 'url' => array('familyRegistration/create'), 'visible' => !Yii::app()->user->hasState("familyId")),
                             array('label' => 'Edit Profile', 'icon' => 'user', 'url' => array('userLoginModel/update')),
                             array('label' => 'View Profile', 'icon' => 'user', 'url' => array('userLoginModel/view')),
                             array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
