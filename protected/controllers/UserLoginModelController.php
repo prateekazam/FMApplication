@@ -26,12 +26,12 @@ class UserLoginModelController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view', 'create'),
+                'actions' => array('index', 'view', 'create', 'update'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('update'),
-                'users' => array('@'),
+            // 'actions' => array('update'),
+            //'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
                 'actions' => array('admin', 'delete'),
@@ -48,9 +48,13 @@ class UserLoginModelController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView() {
+        $id = Yii::app()->user->getState("userId");
+        $modelFamily = FamilyRegistration::model()->findByAttributes(array('USER_ID' => $id));
         $this->layout = '//layouts/postPage';
+
         $this->render('view', array(
             'model' => $this->loadModel(),
+            'modelFamily' => $modelFamily,
         ));
     }
 
@@ -79,7 +83,7 @@ class UserLoginModelController extends Controller {
             $model->attributes = $_POST['UserLoginModel'];
             if ($model->save()) {
                 Yii::app()->user->setState("userId", $model->USER_ID);
-                $this->redirect(array('pages/about.php'));
+                $this->redirect(array('site/home'));
             }
         }
 
