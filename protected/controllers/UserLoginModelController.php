@@ -50,11 +50,14 @@ class UserLoginModelController extends Controller {
     public function actionView() {
         $id = Yii::app()->user->getState("userId");
         $modelFamily = FamilyRegistration::model()->findByAttributes(array('USER_ID' => $id));
+        $Criteria = new CDbCriteria();
+        $Criteria->condition = 'USER_ID = :id';
+        $userHobbiesList = FmUserHobbies::model()->findAll('USER_ID=?', array($id));
         $this->layout = '//layouts/postPage';
-
         $this->render('view', array(
             'model' => $this->loadModel(),
             'modelFamily' => $modelFamily,
+            'userHobbiesList' => $userHobbiesList,
         ));
     }
 
