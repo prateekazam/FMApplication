@@ -1,4 +1,5 @@
 <?php
+
 echo "<h4>User Information</h4>";
 $this->widget('zii.widgets.CDetailView', array(
     'data' => $model,
@@ -33,3 +34,19 @@ if ($modelFamily != null) {
     ));
 }
 ?>
+<?php
+
+if ($userHobbiesList != null) {
+    echo "<h4>Hobbies</h4>";
+    echo "<ul id=\"hideme\">";
+    foreach ($userHobbiesList as $use1) {
+        echo "<li>" . $use1->hOBBIES->HOBBIES_NAME . "</li>";
+    }
+
+    echo "</ul>";
+}
+?>
+
+
+
+
