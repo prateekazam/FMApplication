@@ -95,10 +95,12 @@ class SiteController extends Controller {
         $this->render('login', array('model' => $model));
         //  $this->render('login', array('model' => $model));
     }
-     public function actionHome() {
-         
-       $this->render('index');
-     }
+
+    public function actionHome() {
+
+        $this->render('index');
+    }
+
     /**
      * Logs out the current user and redirect to homepage.
      */
@@ -106,6 +108,21 @@ class SiteController extends Controller {
         Yii::app()->session->clear();
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->homeUrl);
+    }
+
+    function actionGetNames() {
+        if (!empty($_GET['term'])) {
+            $sql = 'SELECT people_id as id, CONCAT(first_name," ",last_name) as value, first_name as label FROM people WHERE first_name LIKE :qterm ';
+            $sql .= ' ORDER BY first_name ASC';
+            $command = Yii::app()->db->createCommand($sql);
+            $qterm = $_GET['term'] . '%';
+            $command->bindParam(":qterm", $qterm, PDO::PARAM_STR);
+            $result = $command->queryAll();
+            echo CJSON::encode($result);
+            exit;
+        } else {
+            return false;
+        }
     }
 
 }
