@@ -49,8 +49,9 @@ and open the template in the editor.
                             array('label' => 'Family Registration', 'icon' => 'user', 'url' => array('familyRegistration/create'), 'visible' => !Yii::app()->user->hasState("familyId")),
                             array('label' => 'Edit Profile', 'icon' => 'user', 'url' => array('userLoginModel/update')),
                             array('label' => 'View Profile', 'icon' => 'user', 'url' => array('userLoginModel/view')),
-                            array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
+                            array('label' => 'Hobbies', 'icon' => 'home', 'url' =>array('fmUserHobbies/create')),
                             array('label' => 'Upload Photo', 'icon' => 'cog', 'url' => array('FmUserPhotos/create')),
+                            array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
                             array('label' => 'Help', 'icon' => 'flag', 'url' => '#'),
                         ),
                     ));
