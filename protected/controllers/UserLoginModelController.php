@@ -53,11 +53,13 @@ class UserLoginModelController extends Controller {
         $Criteria = new CDbCriteria();
         $Criteria->condition = 'USER_ID = :id';
         $userHobbiesList = FmUserHobbies::model()->findAll('USER_ID=?', array($id));
+        $userAddress = FmAddressMst::model()->findByAttributes(array('USER_ID' => $id));
         $this->layout = '//layouts/postPage';
         $this->render('view', array(
             'model' => $this->loadModel(),
             'modelFamily' => $modelFamily,
             'userHobbiesList' => $userHobbiesList,
+            'userAddress'=>$userAddress,
         ));
     }
 
