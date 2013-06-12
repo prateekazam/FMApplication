@@ -47,6 +47,22 @@ if ($userHobbiesList != null) {
 }
 ?>
 
+<?php
+
+if ($userAddress != null) {
+    echo "<h4>Address</h4>";
+    $this->widget('zii.widgets.CDetailView', array(
+        'data' => $userAddress,
+        'attributes' => array(
+            array('name' => 'Country Name', 'value' => $userAddress->countryID->name),
+            array('name' => 'State Name', 'value' => $userAddress->stateID->name),
+            array('name' => 'County Name', 'value' => $userAddress->countyID->name),
+            array('name' => 'Town Name', 'value' => $userAddress->townID->name),
+            array('name' => 'Zip Code', 'value' => $userAddress->zipCode->name),
+            ),));
+}
+?>
+
 
 
 
