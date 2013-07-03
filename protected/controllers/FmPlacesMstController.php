@@ -53,6 +53,12 @@ class FmPlacesMstController extends Controller {
             'model' => $this->loadModel($id),
         ));
     }
+    
+    public function actionTreePage() {
+        $this->render('example');
+    }
+    
+    
 
     /**
      * Creates a new model.
@@ -165,8 +171,12 @@ class FmPlacesMstController extends Controller {
         //$model->attributes = $_POST['FmPlacesMst'];
         $COUNTRY_ID = (int) $_POST['FmAddressMst']['COUNTRY_ID'];
         $data = FmPlacesMst::model()->findAll('type="State" and language="ENG" and parent=:parent_id order by name ASC', array(':parent_id' => $COUNTRY_ID));
+        $static = array(
+            'Select State' => Yii::t('Select State', 'Select State'),
+        );
         $datavalue = CHtml::listData($data, 'woeid', 'name');
-        foreach ($datavalue as $value => $name) {
+        $dvalue = $static + $datavalue;
+        foreach ($dvalue as $value => $name) {
             echo CHtml::tag('option', array('value' => $value), CHtml::encode($name), true);
         }
     }
@@ -176,9 +186,13 @@ class FmPlacesMstController extends Controller {
         //findAll('type="Country" and language="ENG"', array('order' => 'name'))\
         //$model->attributes = $_POST['FmPlacesMst'];
         $STATE_ID = (int) $_POST['FmAddressMst']['STATE_ID'];
+        $static = array(
+            'Select City' => Yii::t('Select City', 'Select City'),
+        );
         $data = FmPlacesMst::model()->findAll('type="County" and language="ENG" and parent=:parent_id order by name ASC', array(':parent_id' => $STATE_ID));
         $datavalue = CHtml::listData($data, 'woeid', 'name');
-        foreach ($datavalue as $value => $name) {
+        $dvalue = $static + $datavalue;
+        foreach ($dvalue as $value => $name) {
             echo CHtml::tag('option', array('value' => $value), CHtml::encode($name), true);
         }
     }
@@ -188,9 +202,13 @@ class FmPlacesMstController extends Controller {
         //findAll('type="Country" and language="ENG"', array('order' => 'name'))\
         //$model->attributes = $_POST['FmPlacesMst'];
         $COUNTY_ID = $_POST['FmAddressMst']['COUNTY_ID'];
+        $static = array(
+            'Select Town' => Yii::t('Select Town', 'Select Town'),
+        );
         $data = FmPlacesMst::model()->findAll('type="Town" and language="ENG" and parent=:parent_id order by name ASC', array(':parent_id' => (int) $COUNTY_ID));
         $datavalue = CHtml::listData($data, 'woeid', 'name');
-        foreach ($datavalue as $value => $name) {
+        $dvalue = $static + $datavalue;
+        foreach ($dvalue as $value => $name) {
             echo CHtml::tag('option', array('value' => $value), CHtml::encode($name), true);
         }
     }
@@ -201,7 +219,11 @@ class FmPlacesMstController extends Controller {
         $TOWN_ID = $_POST['FmAddressMst']['TOWN_ID'];
         $data = FmPlacesMst::model()->findAll('type="Zip" and language="ENG" and parent=:parent_id', array(':parent_id' => (int) $TOWN_ID));
         $datavalue = CHtml::listData($data, 'name', 'name');
-        foreach ($datavalue as $value => $name) {
+        $static = array(
+            'Select Zip Code' => Yii::t('Select Zip Code', 'Select Zip Code'),
+        );
+        $dvalue = $static + $datavalue;
+        foreach ($dvalue as $value => $name) {
             echo CHtml::tag('option', array('value' => $value), CHtml::encode($name), true);
         }
     }
