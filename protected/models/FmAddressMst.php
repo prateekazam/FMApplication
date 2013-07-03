@@ -80,7 +80,7 @@ class FmAddressMst extends CActiveRecord {
     public function attributeLabels() {
         return array(
             'ADDRESS_ID' => 'Address',
-            'ADDRESS_TYPE' => 'Address Type',
+            'ADDRESS_TYPE' => 'Is Permanent Address same as Current Address',
             'ADDRESS_LINE_1' => 'Address Line 1',
             'ADDRESS_LINE_2' => 'Address Line 2',
             'COUNTRY_ID' => 'Country',
