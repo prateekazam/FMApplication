@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create FmAddressMst</h1>
+<h2 class="form-signin-heading">Create Address</h2>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
