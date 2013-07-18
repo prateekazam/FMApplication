@@ -3,6 +3,7 @@
 /* @var $model FmAddressMst */
 /* @var $form CActiveForm */
 ?>
+
 <?php
 $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id' => 'fm-address-mst-form',
