@@ -60,7 +60,7 @@ class FamilyRelationMap extends CActiveRecord {
         return array(
             'uSER' => array(self::BELONGS_TO, 'FmUserBasicInf', 'USER_ID'),
             'fAMILY' => array(self::BELONGS_TO, 'FmFamilyRegistration', 'FAMILY_ID'),
-            'fAMILYREL' => array(self::BELONGS_TO, 'FmRelationMst', 'FAMILY_REL_ID'),
+            'fAMILYRELMST' => array(self::BELONGS_TO, 'RelationMaster', 'FAMILY_REL_ID'),
         );
     }
 
