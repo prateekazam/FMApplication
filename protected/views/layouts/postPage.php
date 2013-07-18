@@ -52,7 +52,7 @@ and open the template in the editor.
                             array('label' => 'Hobbies', 'icon' => 'home', 'url' => array('fmUserHobbies/create')),
                             array('label' => 'Address', 'icon' => 'cog', 'url' => array('FmAddressMst/create')),
                             array('label' => 'Upload Photo', 'icon' => 'cog', 'url' => array('FmUserPhotos/create')),
-                            array('label' => 'Family Tree', 'icon' => 'home', 'url' => '#'),
+                            array('label' => 'Family Tree', 'icon' => 'home', 'url' => array('FmUserFamilyRelationMap/index')),
                             array('label' => 'Help', 'icon' => 'flag', 'url' => '#'),
                         ),
                     ));
